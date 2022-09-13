@@ -1,46 +1,126 @@
-# Thales Open Source Template Project
+# D1 SDK Sample iOS application
 
-Template for creating a new project in the [Thales GitHub organization](https://github.com/ThalesGroup). 
-
-Each Thales OSS project repository **MUST** contain the following files at the root:
-
-- a `LICENSE` which has been chosen in accordance with legal department depending on your needs 
-
-- a `README.md` outlining the project goals, sponsoring sig, and community contact information, [GitHub tips about README.md](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes)
-
-- a `CONTRIBUTING.md` outlining how to contribute to the project, how to submit a pull request and an issue
-
-- a `SECURITY.md` outlining how the security concerns are handled, [GitHub tips about SECURITY.md](https://docs.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
-
-Below is an example of the common structure and information expected in a README.
-
-**Please keep this structure as is and only fill the content for each section according to your project.**
-
-If you need assistance or have question, please contact oss@thalesgroup.com 
-
-
+Sample application to show the integration of D1 SDK in to an iOS application.
 
 ## Get started
 
-XXX project purpose it to ...
+To be able to build and run the sample application:
 
-**Please also add the description into the About section (Description field)**
+1. D1 SDK needs to be added to the sample application.
+2. Application configuration needs to be updated.
+3. Install CocoaPods
+
+Please contact your Thales representative to recieve D1 SDK and a working configuration.
+
+### D1 SDK
+
+Please refer to the sample applications `FRAMEWORK_SEARCH_PATHS` for the correct location of D1 SDK.
+
+**`D1Sample.xcodeproj/project.pbxproj`**
+```bash
+FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../D1/Release";
+FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../D1/Debug";
+```
+
+```bash
+D1/
+├── Debug
+│   ├── D1.xcframework
+│   ├── D1Core.xcframework
+│   └── TPCSDKSwift.xcframework
+└── Release
+    ├── D1.xcframework
+    ├── D1Core.xcframework
+    └── TPCSDKSwift.xcframework
+```
+
+For more details, please refer to the [D1 SDK Integration](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/aae279e415b85-sdk-integration-on-i-os) section of the D1 Developer Portal.
+
+### Configuration
+
+#### D1 backend configuration
+
+The D1 backend configuration needs to be updated in the following file:
+
+**`D1Sample/sdk/Configuration.swift`**
+```swift
+/// D1 SDK configuration.
+public struct Configuration {
+    // The URL of D1 Service Server.
+    static let D1_SERVICE_URL: String = ""
+    
+    // The issuer identifier.
+    static let ISSUER_ID: String = ""
+    
+    // The URL for digital card operation.
+    static let DIGITAL_CARD_URL: String = ""
+    
+    // The RSA modulus of the public key for secure communication between D1 Service Server and the SDK.
+    static let D1_SERVICE_MODULUS: [UInt8] = [0x00,0x00,0x00,0x00]
+    
+    // The RSA exponent of the public key for secure communication between D1 Service Server and the SDK.
+    static let D1_SERVICE_RSA_EXPONENT: [UInt8] = [0x00, 0x00, 0x00]
+    
+    // Consumer ID.
+    static let CONSUMER_ID = ""
+    
+    // Card ID.
+    static let CARD_ID = ""
+}
+```
+
+For more details, please refer to the [D1 SDK Setup](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/ZG9jOjI4ODMzMjkz-onboarding) section of the D1 Developer Portal.
+
+#### Authentication
+
+To receive access to all D1 services, the user needs to authenticate with D1. This authentication is done using a [JSON Web Token (JWT)](https://auth0.com/docs/secure/tokens/json-web-tokens). For simplicity this token is generated in the sample application. To generate the JWT the following configuration needs to be updated:
+
+**`D1Sample/jwt/Tenant.swift`**
+```swift
+
+/// Tenant configuration.
+struct Tenant {
+    
+    static let SANDBOX = Tenant(name: "name",
+                                   scope: "scope",
+                                   audience: "audience",
+                                   jwtKeyID: "jwtKeyId",
+                                   algo: .es256,
+                                   jwtPrivateKey: "privateKey")
+}
+```
+
+For more details, please refer to the [D1 SDK Login](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/70d2f0c3dbfd9-login) section of the D1 Developer Portal.
+
+### CocoaPods
+
+Install CocoaPods:
+
+```bash
+>> pod install
+```
+
+## Build and run project
+
+After all of the configurations have been updated, the generated xcworkspace can be opened and build using Xcode.
+
+## Source code overview
+ 
+Most of D1 SDK related source code is located in the following classes:
+
+* `D1Helper` - most of D1 SDK logic.
+* `Configuration` - D1 backend configuration.
+* `Tenant` - JWT configuration.
 
 ## Documentation
 
-Documentation is available at [xxx/docs](https://xxx/docs/).
+[D1 Developer portal](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/ZG9jOjE1MjEwNTMy-digital-first-d1-ux)
 
-You can use [GitHub pages](https://guides.github.com/features/pages/) to create your documentation.
-
-See an example here : https://github.com/ThalesGroup/ThalesGroup.github.io
-
-**Please also add the documentation URL into the About section (Website field)**
 
 ## Contributing
 
-If you are interested in contributing to the XXX project, start by reading the [Contributing guide](/CONTRIBUTING.md).
+If you are interested in contributing to the D1 SDK Sample Android application, start by reading the [Contributing guide](/CONTRIBUTING.md).
 
 ## License
 
-The chosen license in accordance with legal department must be defined into an explicit [LICENSE](https://github.com/ThalesGroup/template-project/blob/master/LICENSE) file at the root of the repository
-You can also link this file in this README section.
+[LICENSE](/LICENSE)
