@@ -23,15 +23,19 @@ FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../D1/Debug";
 ```
 
 ```bash
-D1/
-├── Debug
-│   ├── D1.xcframework
-│   ├── D1Core.xcframework
-│   └── TPCSDKSwift.xcframework
-└── Release
-    ├── D1.xcframework
-    ├── D1Core.xcframework
-    └── TPCSDKSwift.xcframework
+├── D1Sample
+├── D1Sample.xcodeproj
+├── Podfile
+├── Podfile.lock
+└── D1
+    ├── Debug
+    │   ├── D1.xcframework
+    │   ├── D1Core.xcframework
+    │   └── TPCSDKSwift.xcframework
+    └── Release
+        ├── D1.xcframework
+        ├── D1Core.xcframework
+        └── TPCSDKSwift.xcframework
 ```
 
 For more details, please refer to the [D1 SDK Integration](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/aae279e415b85-sdk-integration-on-i-os) section of the D1 Developer Portal.
