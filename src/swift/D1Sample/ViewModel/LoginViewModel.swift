@@ -12,7 +12,7 @@ class LoginViewModel: BaseViewModel {
     /// Logs in.
     public func login() {
         self.showProgress = true
-        let accessToken: String = String(decoding: JWTEncoder.generateCustomBAn(consumerID: Configuration.CONSUMER_ID, tenant: Tenant.SANDBOX),
+        let accessToken: String = String(decoding: JWTEncoder.generateCustomBAn(consumerID: Configuration.CONSUMER_ID, tenant: Configuration.SANDBOX),
                                          as: UTF8.self)
         
         D1Helper.shared().login(accessToken: accessToken) { (error: D1Error?) in

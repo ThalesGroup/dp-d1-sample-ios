@@ -27,9 +27,9 @@ struct JWTEncoder {
         let exp: Date
     }
 
-    /// Defaults to digibank01
+    /// Defaults to sandbox
     static func generateCustomBAn(consumerID: String) -> Data {
-        return generateCustomBAn(consumerID: consumerID, tenant: Tenant.SANDBOX)
+        return generateCustomBAn(consumerID: consumerID, tenant: Configuration.SANDBOX)
     }
 
     /// Generates an A2 BAn token for a specific {@code customerID}

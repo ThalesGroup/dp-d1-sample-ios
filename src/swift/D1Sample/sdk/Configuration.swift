@@ -26,4 +26,14 @@ public struct Configuration {
     
     // Card ID.
     static let CARD_ID = ""
+    
+    // JWT configuration for authenticatio
+    static let SANDBOX = Tenant(name: "name",
+                                   scope: "scope",
+                                   audience: "audience",
+                                   jwtKeyID: "jwtKeyId",
+                                   algo: .es256,
+                                   jwtPrivateKey: """
+    privateKey
+    """)
 }

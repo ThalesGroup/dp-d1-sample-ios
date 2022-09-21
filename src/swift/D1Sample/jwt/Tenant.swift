@@ -13,15 +13,6 @@ struct Tenant {
     let jwtKeyID: String
     let algo: TenantJwtAlgo
     let jwtPrivateKey: String
-    
-    static let SANDBOX = Tenant(name: "name",
-                                   scope: "scope",
-                                   audience: "audience",
-                                   jwtKeyID: "jwtKeyId",
-                                   algo: .es256,
-                                   jwtPrivateKey: """
-    privateKey
-    """)
 }
 
 enum TenantJwtAlgo {
