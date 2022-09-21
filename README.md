@@ -79,11 +79,11 @@ For more details, please refer to the [D1 SDK Setup](https://thales-dis-dbp.stop
 
 To receive access to all D1 services, the user needs to authenticate with D1. This authentication is done using a [JSON Web Token (JWT)](https://auth0.com/docs/secure/tokens/json-web-tokens). For simplicity this token is generated in the sample application. To generate the JWT the following configuration needs to be updated:
 
-**`D1Sample/jwt/Tenant.swift`**
+**`D1Sample/sdk/Configuration.swift`**
 ```swift
 
 /// Tenant configuration.
-struct Tenant {
+public struct Configuration {
     
     static let SANDBOX = Tenant(name: "name",
                                    scope: "scope",
