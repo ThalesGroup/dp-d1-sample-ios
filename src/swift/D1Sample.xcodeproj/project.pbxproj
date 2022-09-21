@@ -23,7 +23,6 @@
 		F472998028410BC10032A6F3 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472997728410BC00032A6F3 /* NotificationView.swift */; };
 		F472998128410BC10032A6F3 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472997828410BC00032A6F3 /* RootView.swift */; };
 		F472998228410BC10032A6F3 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472997928410BC00032A6F3 /* ViewRouter.swift */; };
-		F4729986284113630032A6F3 /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4729985284113630032A6F3 /* String+Hex.swift */; };
 		F4729987284113760032A6F3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472997328410BC00032A6F3 /* SplashView.swift */; };
 		F47299882841137D0032A6F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472997628410BC00032A6F3 /* LoginView.swift */; };
 		F472998A284116A60032A6F3 /* VirtualCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4729989284116A60032A6F3 /* VirtualCardListView.swift */; };
@@ -83,7 +82,6 @@
 		F472997728410BC00032A6F3 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		F472997828410BC00032A6F3 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F472997928410BC00032A6F3 /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
-		F4729985284113630032A6F3 /* String+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Hex.swift"; sourceTree = "<group>"; };
 		F4729989284116A60032A6F3 /* VirtualCardListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualCardListView.swift; sourceTree = "<group>"; };
 		F472998B284116B40032A6F3 /* VirtualCardListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualCardListViewModel.swift; sourceTree = "<group>"; };
 		F472998D284117260032A6F3 /* CardDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				F472994E28410B780032A6F3 /* ui */,
 				F472994D28410B6F0032A6F3 /* ViewModel */,
 				F472994C28410B6A0032A6F3 /* sdk */,
-				F472994B28410B5E0032A6F3 /* util */,
 				F472992A284109780032A6F3 /* D1SampleApp.swift */,
 				F472992E2841097B0032A6F3 /* Assets.xcassets */,
 				F47299302841097B0032A6F3 /* Preview Content */,
@@ -176,14 +173,6 @@
 				1B3708BA9821C5EAFC6A0E13 /* libPods-D1Sample.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F472994B28410B5E0032A6F3 /* util */ = {
-			isa = PBXGroup;
-			children = (
-				F4729985284113630032A6F3 /* String+Hex.swift */,
-			);
-			path = util;
 			sourceTree = "<group>";
 		};
 		F472994C28410B6A0032A6F3 /* sdk */ = {
@@ -362,7 +351,6 @@
 				F4F0556128463BF200CE7B62 /* PhysicalCardListView.swift in Sources */,
 				F472992B284109780032A6F3 /* D1SampleApp.swift in Sources */,
 				F4F0555F2846388500CE7B62 /* HomeViewModel.swift in Sources */,
-				F4729986284113630032A6F3 /* String+Hex.swift in Sources */,
 				F472996F28410BB60032A6F3 /* BaseViewModel.swift in Sources */,
 				F4A0A48A286AF1750067CFCB /* Tenant.swift in Sources */,
 				F472998A284116A60032A6F3 /* VirtualCardListView.swift in Sources */,
