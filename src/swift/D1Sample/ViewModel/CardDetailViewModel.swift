@@ -76,49 +76,6 @@ class CardDetailViewModel: BaseViewModel {
         self.cvv = "****"
     }
     
-    /// Suspends the card.
-    /// - Parameter cardId: Card ID.
-    public func suspendCard(cardId: String) {
-        self.showProgress = true
-        
-        D1Helper.shared().suspedCard(cardId: cardId) { (error: D1Error?) in
-            if self.isError(error: error) {
-                return
-            }
-            
-            self.getCardMetaData(cardId: cardId)
-        }
-    }
-    
-    /// Resumes the card.
-    /// - Parameter cardId: Card ID.
-    public func resumeCard(cardId: String) {
-        self.showProgress = true
-
-        D1Helper.shared().resumeCard(cardId: cardId) { (error: D1Error?) in
-            if self.isError(error: error) {
-                return
-            }
-            
-            self.getCardMetaData(cardId: cardId)
-        }
-    }
-    
-    /// Deletes the card.
-    /// - Parameter cardId: Card ID.
-    public func deleteCard(cardId: String) {
-        self.showProgress = true
-        
-        D1Helper.shared().deleteCard(cardId: cardId) { (error: D1Error?) in
-            
-                if self.isError(error: error) {
-                    return
-                }
-                
-                self.cardState = .deleted
-        }
-    }
-    
     /// Checks if card is digitized.
     /// - Parameter cardId: Card ID.
     public func isCardDigitized(cardId: String) {

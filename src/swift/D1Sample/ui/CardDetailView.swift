@@ -74,30 +74,6 @@ struct CardDetailView: View {
                                    self.cardDetailViewModel.digitizationState == CardDigitizationState.pendingIDVLocal ||
                                    self.cardDetailViewModel.digitizationState == CardDigitizationState.pendingIDVRemote)
                     }
-                    
-                    ToolbarItem (placement: .bottomBar) {
-                        Button("Suspend Card") {
-                            if let cardId = self.viewRouter.selectedCardId {
-                                self.cardDetailViewModel.suspendCard(cardId: cardId)
-                            }
-                        }.disabled(self.cardDetailViewModel.cardState != .active)
-                    }
-                    
-                    ToolbarItem (placement: .bottomBar) {
-                        Button("Resume Card") {
-                            if let cardId = self.viewRouter.selectedCardId {
-                                self.cardDetailViewModel.resumeCard(cardId: cardId)
-                            }
-                        }.disabled(self.cardDetailViewModel.cardState != .inactive)
-                    }
-                    
-                    ToolbarItem (placement: .bottomBar) {
-                        Button("Delete Card") {
-                            if let cardId = self.viewRouter.selectedCardId {
-                                self.cardDetailViewModel.deleteCard(cardId: cardId)
-                            }
-                        }.disabled(true)
-                    }
                 }.onAppear {
                     if let cardId = self.viewRouter.selectedCardId {
                         self.cardDetailViewModel.getCardMetaData(cardId: cardId)

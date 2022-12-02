@@ -13,7 +13,7 @@ To be able to build and run the sample application:
 Please contact your Thales representative to recieve D1 SDK and a working configuration.
 
 ### D1 SDK
-This sample application was tested with D1 SDK version 2.1.0-16.
+This sample application was tested with D1 SDK version 2.2.0-19.
 Please refer to the sample applications `FRAMEWORK_SEARCH_PATHS` for the correct location of D1 SDK.
 
 **`D1Sample.xcodeproj/project.pbxproj`**

@@ -84,30 +84,6 @@ public class D1Helper {
         self.getD1Task().cardDetails(cardId, completion: callback)
     }
     
-    /// Suspends the card.
-    /// - Parameters:
-    ///   - cardId: Card ID.
-    ///   - callback: Callback.
-    public func suspedCard(cardId: String, callback: @escaping (D1Error?) -> Void) {
-        self.getD1Task().updateCard(cardId, cardAction: CardAction.suspend, reason: "Suspend", completion: callback)
-    }
-    
-    /// Resumes the card.
-    /// - Parameters:
-    ///   - cardId: Card ID.
-    ///   - callback: Callback.
-    public func resumeCard(cardId: String, callback: @escaping (D1Error?) -> Void) {
-        self.getD1Task().updateCard(cardId, cardAction: CardAction.resume, reason: "Resume", completion: callback)
-    }
-    
-    /// Deletes the card.
-    /// - Parameters:
-    ///   - cardId: Card ID.
-    ///   - callback: Callback.
-    public func deleteCard(cardId: String, callback: @escaping (D1Error?) -> Void) {
-        self.getD1Task().updateCard(cardId, cardAction: CardAction.delete, reason: "Delete", completion: callback)
-    }
-    
     /// Checks if card is digitized.
     /// - Parameters:
     ///   - cardId: Card ID.
