@@ -90,21 +90,6 @@ class CardDetailViewModel: BaseViewModel {
         }
     }
     
-    /// Digitizes the card.
-    /// - Parameter cardId: Card ID.
-    public func digitizeCard(cardId: String) {
-        self.showProgress = true
-
-        D1Helper.shared().digitizeCard(cardid: cardId) { (error: D1Error?) in
-            if self.isError(error: error) {
-                return
-            }
-            
-            // get updated card state
-            self.isCardDigitized(cardId: cardId)
-        }
-    }
-    
     /// Extracts the image resources.
     /// - Parameter cardMetaData: Card meta data.
     private func extractImageResources(cardMetaData: CardMetadata?) {

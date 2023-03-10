@@ -10,6 +10,10 @@ import D1
 struct CardDetailView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @StateObject var cardDetailViewModel: CardDetailViewModel = CardDetailViewModel()
+    @State var isPresented = false
+    @State var isD1PushDigitizationError = false;
+    @State var isD1PushDigitizationSuccess = false;
+    @State var errorMessage: String? = nil
     
     var body: some View {
         NavigationView {
@@ -52,6 +56,14 @@ struct CardDetailView: View {
                     Button("Show Digital Cards") {
                         self.viewRouter.currentPage = .digitalCardList
                     }.padding(20).disabled(self.cardDetailViewModel.pan == nil)
+                    
+                    Button("Add Card To Wallet") {
+                        self.isPresented = true
+                    }.padding(20).disabled(self.cardDetailViewModel.digitizationState == CardDigitizationState.digitized ||
+                                           self.cardDetailViewModel.digitizationState == CardDigitizationState.pendingIDVLocal ||
+                                           self.cardDetailViewModel.digitizationState == CardDigitizationState.pendingIDVRemote).sheet(isPresented: self.$isPresented) {
+                        D1PushView(isError: self.$isD1PushDigitizationError, errorMessage: self.$errorMessage, isSuccess: self.$isD1PushDigitizationSuccess)
+                    }
                                         
                     if self.cardDetailViewModel.showProgress {
                         ProgressView()
@@ -64,16 +76,6 @@ struct CardDetailView: View {
                             viewRouter.currentPage = .cardList
                         }
                     }
-                    
-                    ToolbarItem (placement: .navigationBarTrailing) {
-                        Button("Add Card To Wallet") {
-                            if let cardId = self.viewRouter.selectedCardId {
-                                self.cardDetailViewModel.digitizeCard(cardId: cardId)
-                            }
-                        }.disabled(self.cardDetailViewModel.digitizationState == CardDigitizationState.digitized ||
-                                   self.cardDetailViewModel.digitizationState == CardDigitizationState.pendingIDVLocal ||
-                                   self.cardDetailViewModel.digitizationState == CardDigitizationState.pendingIDVRemote)
-                    }
                 }.onAppear {
                     if let cardId = self.viewRouter.selectedCardId {
                         self.cardDetailViewModel.getCardMetaData(cardId: cardId)
@@ -84,6 +86,10 @@ struct CardDetailView: View {
                         self.viewRouter.selectedCardId = nil
                         self.viewRouter.currentPage = .cardList
                     }
+                }
+                
+                if self.isD1PushDigitizationError && self.errorMessage != nil {
+                    EmptyView().banner(message: self.$errorMessage, show: self.$isD1PushDigitizationError)
                 }
                 
                 if self.cardDetailViewModel.isNotifcationVisible && self.cardDetailViewModel.errorMessage != nil {

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		14AFF8A147552B252B94350E /* libPods-D1Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3708BA9821C5EAFC6A0E13 /* libPods-D1Sample.a */; };
+		F452B9C629BB1A370053F3EA /* d1.plist in Resources */ = {isa = PBXBuildFile; fileRef = F452B9C529BB1A370053F3EA /* d1.plist */; };
+		F452B9CA29BB1CEA0053F3EA /* D1PushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F452B9C729BB1CEA0053F3EA /* D1PushView.swift */; };
+		F452B9CB29BB1CEA0053F3EA /* D1PushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F452B9C829BB1CEA0053F3EA /* D1PushViewController.xib */; };
+		F452B9CC29BB1CEA0053F3EA /* D1PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F452B9C929BB1CEA0053F3EA /* D1PushViewController.swift */; };
 		F472992B284109780032A6F3 /* D1SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472992A284109780032A6F3 /* D1SampleApp.swift */; };
 		F472992F2841097B0032A6F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F472992E2841097B0032A6F3 /* Assets.xcassets */; };
 		F47299322841097B0032A6F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47299312841097B0032A6F3 /* Preview Assets.xcassets */; };
@@ -65,6 +69,10 @@
 		1B3708BA9821C5EAFC6A0E13 /* libPods-D1Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-D1Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEE463B28EA14A8642A829D /* Pods-D1Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D1Sample.release.xcconfig"; path = "Target Support Files/Pods-D1Sample/Pods-D1Sample.release.xcconfig"; sourceTree = "<group>"; };
 		F377B830811C48D316637E59 /* Pods-D1Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D1Sample.debug.xcconfig"; path = "Target Support Files/Pods-D1Sample/Pods-D1Sample.debug.xcconfig"; sourceTree = "<group>"; };
+		F452B9C529BB1A370053F3EA /* d1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = d1.plist; sourceTree = "<group>"; };
+		F452B9C729BB1CEA0053F3EA /* D1PushView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D1PushView.swift; sourceTree = "<group>"; };
+		F452B9C829BB1CEA0053F3EA /* D1PushViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D1PushViewController.xib; sourceTree = "<group>"; };
+		F452B9C929BB1CEA0053F3EA /* D1PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D1PushViewController.swift; sourceTree = "<group>"; };
 		F4729927284109780032A6F3 /* D1Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D1Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F472992A284109780032A6F3 /* D1SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D1SampleApp.swift; sourceTree = "<group>"; };
 		F472992E2841097B0032A6F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 		F4729929284109780032A6F3 /* D1Sample */ = {
 			isa = PBXGroup;
 			children = (
+				F452B9C529BB1A370053F3EA /* d1.plist */,
 				F4A0A483286AED930067CFCB /* jwt */,
 				F472994E28410B780032A6F3 /* ui */,
 				F472994D28410B6F0032A6F3 /* ViewModel */,
@@ -203,6 +212,9 @@
 		F472994E28410B780032A6F3 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				F452B9C729BB1CEA0053F3EA /* D1PushView.swift */,
+				F452B9C929BB1CEA0053F3EA /* D1PushViewController.swift */,
+				F452B9C829BB1CEA0053F3EA /* D1PushViewController.xib */,
 				F47299912841181F0032A6F3 /* DigitalCardListView.swift */,
 				F472998D284117260032A6F3 /* CardDetailView.swift */,
 				F4729989284116A60032A6F3 /* VirtualCardListView.swift */,
@@ -290,6 +302,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F452B9C629BB1A370053F3EA /* d1.plist in Resources */,
+				F452B9CB29BB1CEA0053F3EA /* D1PushViewController.xib in Resources */,
 				F47299322841097B0032A6F3 /* Preview Assets.xcassets in Resources */,
 				F472992F2841097B0032A6F3 /* Assets.xcassets in Resources */,
 			);
@@ -351,6 +365,7 @@
 				F4F0556128463BF200CE7B62 /* PhysicalCardListView.swift in Sources */,
 				F472992B284109780032A6F3 /* D1SampleApp.swift in Sources */,
 				F4F0555F2846388500CE7B62 /* HomeViewModel.swift in Sources */,
+				F452B9CA29BB1CEA0053F3EA /* D1PushView.swift in Sources */,
 				F472996F28410BB60032A6F3 /* BaseViewModel.swift in Sources */,
 				F4A0A48A286AF1750067CFCB /* Tenant.swift in Sources */,
 				F472998A284116A60032A6F3 /* VirtualCardListView.swift in Sources */,
@@ -366,6 +381,7 @@
 				F472996428410B9E0032A6F3 /* D1Helper.swift in Sources */,
 				F472998E284117260032A6F3 /* CardDetailView.swift in Sources */,
 				F4729990284117300032A6F3 /* CardDetailViewModel.swift in Sources */,
+				F452B9CC29BB1CEA0053F3EA /* D1PushViewController.swift in Sources */,
 				F472998228410BC10032A6F3 /* ViewRouter.swift in Sources */,
 				F4A0A48B286AF1750067CFCB /* JWTEncoder.swift in Sources */,
 				F472998128410BC10032A6F3 /* RootView.swift in Sources */,
@@ -500,7 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"D1Sample/Preview Content\"";
 				DEVELOPMENT_TEAM = LMY4YJ949Q;
 				ENABLE_BITCODE = NO;
@@ -516,7 +532,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.D1Sample.D1Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -532,7 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"D1Sample/Preview Content\"";
 				DEVELOPMENT_TEAM = LMY4YJ949Q;
 				ENABLE_BITCODE = NO;
@@ -548,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.D1Sample.D1Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

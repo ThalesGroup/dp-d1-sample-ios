@@ -33,8 +33,8 @@ public class D1Helper {
         var components = D1Task.Components()
         components.d1ServiceURLString = Configuration.D1_SERVICE_URL
         components.issuerID = Configuration.ISSUER_ID
-        components.d1ServiceRSAExponent = Data(bytes: Configuration.D1_SERVICE_RSA_EXPONENT, count: Configuration.D1_SERVICE_RSA_EXPONENT.count)
-        components.d1ServiceRSAModulus = Data(bytes: Configuration.D1_SERVICE_MODULUS, count: Configuration.D1_SERVICE_MODULUS.count)
+        components.d1ServiceRSAExponent = Configuration.D1_SERVICE_RSA_EXPONENT
+        components.d1ServiceRSAModulus = Configuration.D1_SERVICE_MODULUS
         components.digitalCardURLString = Configuration.DIGITAL_CARD_URL
 
         d1Task = components.task()
@@ -95,9 +95,9 @@ public class D1Helper {
     /// Digitizes the card.
     /// - Parameters:
     ///   - cardid: Card ID.
+    ///   - viewController: Calling ViewController.
     ///   - callback: Callback.
-    public func digitizeCard(cardid: String, callback: @escaping (D1Error?) -> Void) {
-        let viewController: UIViewController = UIViewController()
+    public func digitizeCard(cardid: String, viewController: UIViewController, callback: @escaping (D1Error?) -> Void) {
         getD1Task().addDigitalCardToOEM(cardid, viewController: viewController, completion: callback)
     }
     

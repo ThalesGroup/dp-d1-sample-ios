@@ -7,20 +7,35 @@ Sample application to show the integration of D1 SDK in to an iOS application.
 To be able to build and run the sample application:
 
 1. D1 SDK needs to be added to the sample application.
-2. Application configuration needs to be updated.
+2. Application configuration needs to be added.
 3. Install CocoaPods
+
+The following files need to be added to the project:
+
+1. D1 backend configuration
+   
+```bash
+src/swift/D1Sample/D1Sample/d1.plist
+```
+
+2. D1 SDK
+
+```bash
+src/swift/D1Sample/D1Sample/D1
+                            ├── Debug
+                            │   ├── D1.xcframework
+                            │   ├── D1Core.xcframework
+                            │   └── TPCSDKSwift.xcframework
+                            └── Release
+                                ├── D1.xcframework
+                                ├── D1Core.xcframework
+                                └── TPCSDKSwift.xcframework
+```
 
 Please contact your Thales representative to recieve D1 SDK and a working configuration.
 
 ### D1 SDK
-This sample application was tested with D1 SDK version 2.2.0-19.
-Please refer to the sample applications `FRAMEWORK_SEARCH_PATHS` for the correct location of D1 SDK.
-
-**`D1Sample.xcodeproj/project.pbxproj`**
-```bash
-FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../D1/Release";
-FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../D1/Debug";
-```
+This sample application was tested with **D1 SDK version 2.2.0-19**. D1 SDK needs to be placed in to the following location:
 
 ```bash
 ├── D1Sample
@@ -44,55 +59,51 @@ For more details, please refer to the [D1 SDK Integration](https://thales-dis-db
 
 #### D1 backend configuration
 
-The D1 backend configuration needs to be updated in the following file:
+The `d1.plist` file which holds the D1 backend configuration needs to be added to the project:
 
-**`D1Sample/sdk/Configuration.swift`**
-```swift
-/// D1 SDK configuration.
-public struct Configuration {
-    // The URL of D1 Service Server.
-    static let D1_SERVICE_URL: String = ""
-    
-    // The issuer identifier.
-    static let ISSUER_ID: String = ""
-    
-    // The URL for digital card operation.
-    static let DIGITAL_CARD_URL: String = ""
-    
-    // The RSA modulus of the public key for secure communication between D1 Service Server and the SDK.
-    static let D1_SERVICE_MODULUS: [UInt8] = [0x00,0x00,0x00,0x00]
-    
-    // The RSA exponent of the public key for secure communication between D1 Service Server and the SDK.
-    static let D1_SERVICE_RSA_EXPONENT: [UInt8] = [0x00, 0x00, 0x00]
-    
-    // Consumer ID.
-    static let CONSUMER_ID = ""
-    
-    // Card ID.
-    static let CARD_ID = ""
-}
+**`src/swift/D1Sample/D1Sample/d1.plist`**
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>D1_SERVICE_URL</key>
+	<string></string>
+	<key>ISSUER_ID</key>
+	<string></string>
+	<key>D1_SERVICE_RSA_EXPONENT</key>
+	<string></string>
+	<key>D1_SERVICE_RSA_MODULUS</key>
+	<string></string>
+	<key>DIGITAL_CARD_URL</key>
+	<string></string>
+	<key>CONSUMER_ID</key>
+	<string></string>
+	<key>CARD_ID</key>
+	<string></string>
+	<key>SANDBOX_NAME</key>
+	<string></string>
+	<key>SANDBOX_SCOPE</key>
+	<string></string>
+	<key>SANDBOX_AUDIENCE</key>
+	<string></string>
+	<key>SANDBOX_KEY_ID</key>
+	<string></string>
+	<key>SANDBOX_ALGO</key>
+	<string></string>
+	<key>SANDBOX_PRIVATE_KEY</key>
+	<string></string>
+</dict>
+</plist>
 ```
+
+The `d1.plist` file is not kept under version control to prevent it from being overwritten during repository update.
 
 For more details, please refer to the [D1 SDK Setup](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/ZG9jOjI4ODMzMjkz-onboarding) section of the D1 Developer Portal.
 
 #### Authentication
 
-To receive access to all D1 services, the user needs to authenticate with D1. This authentication is done using a [JSON Web Token (JWT)](https://auth0.com/docs/secure/tokens/json-web-tokens). For simplicity this token is generated in the sample application. To generate the JWT the following configuration needs to be updated:
-
-**`D1Sample/sdk/Configuration.swift`**
-```swift
-
-/// Tenant configuration.
-public struct Configuration {
-    
-    static let SANDBOX = Tenant(name: "name",
-                                   scope: "scope",
-                                   audience: "audience",
-                                   jwtKeyID: "jwtKeyId",
-                                   algo: .es256,
-                                   jwtPrivateKey: "privateKey")
-}
-```
+To receive access to all D1 services, the user needs to authenticate with D1. This authentication is done using a [JSON Web Token (JWT)](https://auth0.com/docs/secure/tokens/json-web-tokens). For simplicity this token is generated in the sample application. The JWT configuration is part of the `d1.plist` file.
 
 For more details, please refer to the [D1 SDK Login](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/70d2f0c3dbfd9-login) section of the D1 Developer Portal.
 
@@ -113,7 +124,6 @@ After all of the configurations have been updated, the generated xcworkspace can
 Most of D1 SDK related source code is located in the following classes:
 
 * `D1Helper` - most of D1 SDK logic.
-* `Configuration` - D1 backend configuration.
 * `Tenant` - JWT configuration.
 
 ## Documentation
