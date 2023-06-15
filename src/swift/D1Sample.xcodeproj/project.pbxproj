@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		14AFF8A147552B252B94350E /* libPods-D1Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3708BA9821C5EAFC6A0E13 /* libPods-D1Sample.a */; };
+		3EF224AA2A3B40AF00889575 /* D1Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F472994128410A950032A6F3 /* D1Core.xcframework */; };
+		3EF224AB2A3B40AF00889575 /* D1Core.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F472994128410A950032A6F3 /* D1Core.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3EF224AC2A3B40AF00889575 /* D1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F472994228410A950032A6F3 /* D1.xcframework */; };
+		3EF224AD2A3B40AF00889575 /* D1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F472994228410A950032A6F3 /* D1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3EF224AE2A3B40AF00889575 /* TPCSDKSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F472994328410A950032A6F3 /* TPCSDKSwift.xcframework */; };
+		3EF224AF2A3B40AF00889575 /* TPCSDKSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F472994328410A950032A6F3 /* TPCSDKSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3EF224B22A3B40AF00889575 /* SecureLogAPI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF224B12A3B40AF00889575 /* SecureLogAPI.xcframework */; };
+		3EF224B32A3B40AF00889575 /* SecureLogAPI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF224B12A3B40AF00889575 /* SecureLogAPI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F452B9C629BB1A370053F3EA /* d1.plist in Resources */ = {isa = PBXBuildFile; fileRef = F452B9C529BB1A370053F3EA /* d1.plist */; };
 		F452B9CA29BB1CEA0053F3EA /* D1PushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F452B9C729BB1CEA0053F3EA /* D1PushView.swift */; };
 		F452B9CB29BB1CEA0053F3EA /* D1PushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F452B9C829BB1CEA0053F3EA /* D1PushViewController.xib */; };
@@ -15,10 +23,6 @@
 		F472992B284109780032A6F3 /* D1SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472992A284109780032A6F3 /* D1SampleApp.swift */; };
 		F472992F2841097B0032A6F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F472992E2841097B0032A6F3 /* Assets.xcassets */; };
 		F47299322841097B0032A6F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47299312841097B0032A6F3 /* Preview Assets.xcassets */; };
-		F472994428410A950032A6F3 /* D1Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F472994128410A950032A6F3 /* D1Core.xcframework */; };
-		F472994528410A950032A6F3 /* D1Core.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F472994128410A950032A6F3 /* D1Core.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F472994828410A950032A6F3 /* TPCSDKSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F472994328410A950032A6F3 /* TPCSDKSwift.xcframework */; };
-		F472994928410A950032A6F3 /* TPCSDKSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F472994328410A950032A6F3 /* TPCSDKSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F472996328410B9E0032A6F3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472996128410B9E0032A6F3 /* Configuration.swift */; };
 		F472996428410B9E0032A6F3 /* D1Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472996228410B9E0032A6F3 /* D1Helper.swift */; };
 		F472996F28410BB60032A6F3 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F472996828410BB60032A6F3 /* BaseViewModel.swift */; };
@@ -38,8 +42,6 @@
 		F4A0A48A286AF1750067CFCB /* Tenant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0A488286AF1750067CFCB /* Tenant.swift */; };
 		F4A0A48B286AF1750067CFCB /* JWTEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0A489286AF1750067CFCB /* JWTEncoder.swift */; };
 		F4B984BA2848A48000261272 /* D1PINDisplayTextFieldWrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B984B92848A48000261272 /* D1PINDisplayTextFieldWrap.swift */; };
-		F4C7B3C128C63B6C004898D5 /* D1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F472994228410A950032A6F3 /* D1.xcframework */; };
-		F4C7B3C228C63B6C004898D5 /* D1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F472994228410A950032A6F3 /* D1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4F0555D2846377300CE7B62 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0555C2846377300CE7B62 /* HomeView.swift */; };
 		F4F0555F2846388500CE7B62 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0555E2846388500CE7B62 /* HomeViewModel.swift */; };
 		F4F0556128463BF200CE7B62 /* PhysicalCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F0556028463BF200CE7B62 /* PhysicalCardListView.swift */; };
@@ -50,15 +52,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F472994A28410A950032A6F3 /* Embed Frameworks */ = {
+		3EF224B02A3B40AF00889575 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F472994928410A950032A6F3 /* TPCSDKSwift.xcframework in Embed Frameworks */,
-				F472994528410A950032A6F3 /* D1Core.xcframework in Embed Frameworks */,
-				F4C7B3C228C63B6C004898D5 /* D1.xcframework in Embed Frameworks */,
+				3EF224AF2A3B40AF00889575 /* TPCSDKSwift.xcframework in Embed Frameworks */,
+				3EF224AD2A3B40AF00889575 /* D1.xcframework in Embed Frameworks */,
+				3EF224B32A3B40AF00889575 /* SecureLogAPI.xcframework in Embed Frameworks */,
+				3EF224AB2A3B40AF00889575 /* D1Core.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		1B3708BA9821C5EAFC6A0E13 /* libPods-D1Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-D1Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EF224B12A3B40AF00889575 /* SecureLogAPI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SecureLogAPI.xcframework; path = D1/Debug/SecureLogAPI.xcframework; sourceTree = "<group>"; };
 		ACEE463B28EA14A8642A829D /* Pods-D1Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D1Sample.release.xcconfig"; path = "Target Support Files/Pods-D1Sample/Pods-D1Sample.release.xcconfig"; sourceTree = "<group>"; };
 		F377B830811C48D316637E59 /* Pods-D1Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-D1Sample.debug.xcconfig"; path = "Target Support Files/Pods-D1Sample/Pods-D1Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		F452B9C529BB1A370053F3EA /* d1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = d1.plist; sourceTree = "<group>"; };
@@ -113,10 +117,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F472994828410A950032A6F3 /* TPCSDKSwift.xcframework in Frameworks */,
-				F472994428410A950032A6F3 /* D1Core.xcframework in Frameworks */,
-				F4C7B3C128C63B6C004898D5 /* D1.xcframework in Frameworks */,
+				3EF224AE2A3B40AF00889575 /* TPCSDKSwift.xcframework in Frameworks */,
 				14AFF8A147552B252B94350E /* libPods-D1Sample.a in Frameworks */,
+				3EF224AA2A3B40AF00889575 /* D1Core.xcframework in Frameworks */,
+				3EF224AC2A3B40AF00889575 /* D1.xcframework in Frameworks */,
+				3EF224B22A3B40AF00889575 /* SecureLogAPI.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +181,7 @@
 		F472994028410A950032A6F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EF224B12A3B40AF00889575 /* SecureLogAPI.xcframework */,
 				F472994228410A950032A6F3 /* D1.xcframework */,
 				F472994128410A950032A6F3 /* D1Core.xcframework */,
 				F472994328410A950032A6F3 /* TPCSDKSwift.xcframework */,
@@ -252,8 +258,8 @@
 				F4729923284109780032A6F3 /* Sources */,
 				F4729924284109780032A6F3 /* Frameworks */,
 				F4729925284109780032A6F3 /* Resources */,
-				F472994A28410A950032A6F3 /* Embed Frameworks */,
 				B5637551319EA6F107423A84 /* [CP] Copy Pods Resources */,
+				3EF224B02A3B40AF00889575 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -516,7 +522,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"D1Sample/Preview Content\"";
 				DEVELOPMENT_TEAM = LMY4YJ949Q;
 				ENABLE_BITCODE = NO;
@@ -532,7 +538,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.D1Sample.D1Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -548,7 +554,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"D1Sample/Preview Content\"";
 				DEVELOPMENT_TEAM = LMY4YJ949Q;
 				ENABLE_BITCODE = NO;
@@ -564,7 +570,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.D1Sample.D1Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

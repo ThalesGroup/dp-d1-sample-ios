@@ -35,7 +35,7 @@ src/swift/D1Sample/D1Sample/D1
 Please contact your Thales representative to recieve D1 SDK and a working configuration.
 
 ### D1 SDK
-This sample application was tested with **D1 SDK version 2.2.0-19**. D1 SDK needs to be placed in to the following location:
+This sample application was tested with **D1 SDK version 3.0.0**. D1 SDK needs to be placed in to the following location:
 
 ```bash
 ├── D1Sample

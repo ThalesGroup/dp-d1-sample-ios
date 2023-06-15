@@ -93,20 +93,27 @@ class CardDetailViewModel: BaseViewModel {
     /// Extracts the image resources.
     /// - Parameter cardMetaData: Card meta data.
     private func extractImageResources(cardMetaData: CardMetadata?) {
-        if let cardAssets: [CardAsset] = cardMetaData?.cardAssetArray {
-            for cardAsset in cardAssets {
-                if let cardAssetContent = cardAsset.contentArray.first?.encodedData {
-                    if let cardImageData: Data = Data(base64Encoded: cardAssetContent) {
-                        if cardAsset.assetContentType == .background {
-                            if let backgroundImage = UIImage.init(data: cardImageData) {
-                                self.cardBackground = backgroundImage
+        cardMetaData?.cardAssetArray({ (cardAssets: [CardAsset]?, error: D1Error?) in
+            if self.isError(error: error) {
+                return
+            }
+
+            if let cardAssets = cardAssets {
+                for cardAsset in cardAssets {
+                    if let cardAssetContent = cardAsset.contentArray.first?.encodedData {
+                        if let cardImageData: Data = Data(base64Encoded: cardAssetContent) {
+                            if cardAsset.assetContentType == .background {
+                                if let backgroundImage = UIImage.init(data: cardImageData) {
+                                    self.cardBackground = backgroundImage
+                                }
+                            } else {
+                                self.cardIcon = UIImage.init(data: cardImageData)
                             }
-                        } else {
-                            self.cardIcon = UIImage.init(data: cardImageData)
                         }
                     }
                 }
             }
-        }
+
+        })
     }
 }
