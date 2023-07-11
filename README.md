@@ -8,17 +8,17 @@ To be able to build and run the sample application:
 
 1. D1 SDK needs to be added to the sample application.
 2. Application configuration needs to be added.
-3. Install CocoaPods
+3. Install CocoaPods.
 
 The following files need to be added to the project:
 
-1. D1 backend configuration
+1. D1 backend configuration.
    
 ```bash
 src/swift/D1Sample/D1Sample/d1.plist
 ```
 
-2. D1 SDK
+2. D1 SDK.
 
 ```bash
 src/swift/D1Sample/D1Sample/D1
@@ -53,7 +53,7 @@ This sample application was tested with **D1 SDK version 3.0.0**. D1 SDK needs t
         └── TPCSDKSwift.xcframework
 ```
 
-For more details, please refer to the [D1 SDK Integration](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/aae279e415b85-sdk-integration-on-i-os) section of the D1 Developer Portal.
+For more details, please refer to the [D1 SDK Integration](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/9d11ae3647d6b-integrate-sdk-binary-into-your-i-os-application) section of the D1 Developer Portal.
 
 ### Configuration
 
@@ -99,13 +99,13 @@ The `d1.plist` file which holds the D1 backend configuration needs to be added t
 
 The `d1.plist` file is not kept under version control to prevent it from being overwritten during repository update.
 
-For more details, please refer to the [D1 SDK Setup](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/ZG9jOjI4ODMzMjkz-onboarding) section of the D1 Developer Portal.
+For more details, please refer to the [D1 SDK Setup](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/4f003bf306c04-initial-setup) section of the D1 Developer Portal.
 
 #### Authentication
 
 To receive access to all D1 services, the user needs to authenticate with D1. This authentication is done using a [JSON Web Token (JWT)](https://auth0.com/docs/secure/tokens/json-web-tokens). For simplicity this token is generated in the sample application. The JWT configuration is part of the `d1.plist` file.
 
-For more details, please refer to the [D1 SDK Login](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/70d2f0c3dbfd9-login) section of the D1 Developer Portal.
+For more details, please refer to the [D1 SDK Login](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/97566495c786d-sdk-login) section of the D1 Developer Portal.
 
 ### CocoaPods
 
@@ -128,7 +128,7 @@ Most of D1 SDK related source code is located in the following classes:
 
 ## Documentation
 
-[D1 Developer portal](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/ZG9jOjE1MjEwNTMy-digital-first-d1-ux)
+[D1 Developer portal](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/branches/main/de9abde9af194-thales-d1-a-card-api-to-modernise-card-issuance)
 
 
 ## Contributing
