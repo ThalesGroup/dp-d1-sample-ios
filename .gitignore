@@ -105,5 +105,5 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-### d1 configuration plist
-src/swift/D1Sample/d1.plist
+### D1 configuration plist
+D1Configuration.plist
