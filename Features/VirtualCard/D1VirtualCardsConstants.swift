@@ -46,6 +46,16 @@ func VCEventCardDigitizationLifeCycle(_ trigger: Bool, error: D1.D1Error? = nil)
     }
 }
 
+func VCEventCardActivation(_ trigger: Bool, error: D1.D1Error? = nil) -> D1CoreEvent {
+    if trigger {
+        return D1CoreEvent(eventCode: 20020, message: "Card activation update", type: .Info)
+    } else if let error = error {
+        return D1CoreEvent(eventCode: 20021, message: "Card activation failed: \(error)", type: .Error)
+    } else {
+        return D1CoreEvent(eventCode: 20022, message: "Card activation was successful.", type: .Info)
+    }
+}
+
 func VCEventDigitalCardList(_ trigger: Bool, error: D1.D1Error? = nil) -> D1CoreEvent {
     if trigger {
         return D1CoreEvent(eventCode: 20020, message: "Digital card list", type: .Info)

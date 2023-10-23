@@ -16,6 +16,8 @@ struct RootView: View {
             HomeView()
         case .virtualCard:
             VirtualCardView()
+        case .digitalCard:
+            DigitalCardView()
         }
     }
 }

@@ -27,6 +27,13 @@ protocol D1CoreApi {
     /// - Parameter completion: Callback
     func logout(completion: @escaping (D1.D1Error?) -> Void)
     
+    /// Get Card meta data.
+    /// - Parameters:
+    ///   - cardId: Card ID.
+    ///   - completion: Listener.
+    func getCardMetadata(_ cardId: String,
+                         completion: @escaping (D1.CardMetadata?, D1.D1Error?) -> Void)
+    
     /// Checks if given module is enabled
     /// - Parameter module: Module that we want to check.
     /// - Returns: Boolean

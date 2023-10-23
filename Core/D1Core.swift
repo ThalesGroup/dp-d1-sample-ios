@@ -96,6 +96,10 @@ extension D1Core: D1CoreApi {
         getD1Task().logout(lambda(CoreEventLogout, completion: completion))
     }
     
+    func getCardMetadata(_ cardId: String, completion: @escaping (D1.CardMetadata?, D1.D1Error?) -> Void) {
+        getD1Task().cardMetadata(cardId, completion: lambda(VCEventCardMetadata, completion: completion))
+    }
+    
     func isModuleEnabled(_ module: Module) -> Bool {
         return enabledModules.contains(module)
     }

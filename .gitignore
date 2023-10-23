@@ -33,6 +33,7 @@ DerivedData/
 *.xcframework
 *.swp
 *.xcworkspace
+*.orig
 
 ## Obj-C/Swift specific
 *.hmap

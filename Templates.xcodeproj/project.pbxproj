@@ -10,6 +10,15 @@
 		1769860332ED9F5709486343 /* Pods_Templates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFC09D07295A9C89A81C4E2 /* Pods_Templates.framework */; };
 		3E14007B2AB3096D00B4961E /* CoreUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14007A2AB3096D00B4961E /* CoreUtils.swift */; };
 		3E5FB4812AB341D3001AECBB /* D1PushApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FB4802AB341D3001AECBB /* D1PushApi.swift */; };
+		3EA5E86B2AD92C7300CFEDAB /* D1PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E8682AD92C7300CFEDAB /* D1PushViewController.swift */; };
+		3EA5E86C2AD92C7300CFEDAB /* D1PushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E8692AD92C7300CFEDAB /* D1PushView.swift */; };
+		3EA5E86D2AD92C7300CFEDAB /* D1PushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA5E86A2AD92C7300CFEDAB /* D1PushViewController.xib */; };
+		3EA5E86F2AD94F4E00CFEDAB /* DigitalCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E86E2AD94F4E00CFEDAB /* DigitalCardDetailView.swift */; };
+		3EA5E8722AD9638900CFEDAB /* DigitalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E8712AD9638900CFEDAB /* DigitalCardView.swift */; };
+		3EA5E8742AD964C000CFEDAB /* DigitalCardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E8732AD964C000CFEDAB /* DigitalCardDetailViewModel.swift */; };
+		3EA5E8762AD9653600CFEDAB /* DigitalCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA5E8752AD9653600CFEDAB /* DigitalCardViewModel.swift */; };
+		3EADED9B2ADD2DB200F3CACB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADED9A2ADD2DB200F3CACB /* CardView.swift */; };
+		3EADED9D2ADD2DD400F3CACB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADED9C2ADD2DD400F3CACB /* CardViewModel.swift */; };
 		3EE80A6F2AB48B2900591BA7 /* D1Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE80A6E2AB48B2900591BA7 /* D1Push.swift */; };
 		6D09042429C3302000C4A120 /* D1CoreEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D09042329C3302000C4A120 /* D1CoreEventHandler.swift */; };
 		6D09042629C618C200C4A120 /* ButtonOvalBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D09042529C618C200C4A120 /* ButtonOvalBlue.swift */; };
@@ -64,6 +73,15 @@
 		1CFC09D07295A9C89A81C4E2 /* Pods_Templates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Templates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E14007A2AB3096D00B4961E /* CoreUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreUtils.swift; sourceTree = "<group>"; };
 		3E5FB4802AB341D3001AECBB /* D1PushApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D1PushApi.swift; sourceTree = "<group>"; };
+		3EA5E8682AD92C7300CFEDAB /* D1PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D1PushViewController.swift; sourceTree = "<group>"; };
+		3EA5E8692AD92C7300CFEDAB /* D1PushView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = D1PushView.swift; sourceTree = "<group>"; };
+		3EA5E86A2AD92C7300CFEDAB /* D1PushViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = D1PushViewController.xib; sourceTree = "<group>"; };
+		3EA5E86E2AD94F4E00CFEDAB /* DigitalCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardDetailView.swift; sourceTree = "<group>"; };
+		3EA5E8712AD9638900CFEDAB /* DigitalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardView.swift; sourceTree = "<group>"; };
+		3EA5E8732AD964C000CFEDAB /* DigitalCardDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardDetailViewModel.swift; sourceTree = "<group>"; };
+		3EA5E8752AD9653600CFEDAB /* DigitalCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardViewModel.swift; sourceTree = "<group>"; };
+		3EADED9A2ADD2DB200F3CACB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3EADED9C2ADD2DD400F3CACB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		3EE80A6E2AB48B2900591BA7 /* D1Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D1Push.swift; sourceTree = "<group>"; };
 		6D09042329C3302000C4A120 /* D1CoreEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D1CoreEventHandler.swift; sourceTree = "<group>"; };
 		6D09042529C618C200C4A120 /* ButtonOvalBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOvalBlue.swift; sourceTree = "<group>"; };
@@ -145,10 +163,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3EA5E8702AD9626D00CFEDAB /* DigitalCard */ = {
+			isa = PBXGroup;
+			children = (
+				3EA5E8712AD9638900CFEDAB /* DigitalCardView.swift */,
+				3EA5E8752AD9653600CFEDAB /* DigitalCardViewModel.swift */,
+			);
+			path = DigitalCard;
+			sourceTree = "<group>";
+		};
+		3EADED992ADD2D9200F3CACB /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				3EADED9A2ADD2DB200F3CACB /* CardView.swift */,
+				3EADED9C2ADD2DD400F3CACB /* CardViewModel.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		3EE80A6D2AB489EB00591BA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				6DDDCE452A97753300B34B65 /* AddPassButton.swift */,
+				3EA5E86E2AD94F4E00CFEDAB /* DigitalCardDetailView.swift */,
+				3EA5E8732AD964C000CFEDAB /* DigitalCardDetailViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +204,9 @@
 		6D09042A29C61CBD00C4A120 /* VirtualCard */ = {
 			isa = PBXGroup;
 			children = (
+				3EA5E8692AD92C7300CFEDAB /* D1PushView.swift */,
+				3EA5E8682AD92C7300CFEDAB /* D1PushViewController.swift */,
+				3EA5E86A2AD92C7300CFEDAB /* D1PushViewController.xib */,
 				6D09042B29C61CCF00C4A120 /* VirtualCardView.swift */,
 				6D09042D29C61CD900C4A120 /* VirtualCardViewModel.swift */,
 			);
@@ -212,6 +253,7 @@
 		6DBBBAE429BA0791004C26CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3EA5E8702AD9626D00CFEDAB /* DigitalCard */,
 				6D66989F29C2134700A9B197 /* Home */,
 				6D66989E29C2133200A9B197 /* Login */,
 				6D6698A029C2135600A9B197 /* Root */,
@@ -314,11 +356,12 @@
 		6DDDCE482A97753300B34B65 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				6DDDCE4C2A97753300B34B65 /* D1Configuration.swift */,
+				3EADED992ADD2D9200F3CACB /* ui */,
 				3E1400792AB3095A00B4961E /* util */,
 				6DDDCE4F2A97753300B34B65 /* enums */,
 				6DDDCE522A97753300B34B65 /* model */,
 				6DDDCE6B2A9B93BF00B34B65 /* D1Configuration.plist */,
-				6DDDCE4C2A97753300B34B65 /* D1Configuration.swift */,
 				6DDDCE4D2A97753300B34B65 /* D1CoreConstants.swift */,
 				6DDDCE4E2A97753300B34B65 /* D1Core.swift */,
 				6DDDCE512A97753300B34B65 /* D1CoreLambdaHelper.swift */,
@@ -415,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DDDCE6C2A9B93BF00B34B65 /* D1Configuration.plist in Resources */,
+				3EA5E86D2AD92C7300CFEDAB /* D1PushViewController.xib in Resources */,
 				6DD6516229B7474A002F6F5B /* Preview Assets.xcassets in Resources */,
 				6DD6515F29B7474A002F6F5B /* Assets.xcassets in Resources */,
 			);
@@ -470,27 +514,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DBBBAEA29BA08FF004C26CE /* LoginView.swift in Sources */,
+				3EA5E8762AD9653600CFEDAB /* DigitalCardViewModel.swift in Sources */,
 				6DBBBAF129BA09E5004C26CE /* BaseViewModel.swift in Sources */,
 				6DDDCE662A97753300B34B65 /* D1CoreApi.swift in Sources */,
 				6DBBBAF329BA0A37004C26CE /* LoginViewModel.swift in Sources */,
 				6DDDCE612A97753300B34B65 /* D1CoreConstants.swift in Sources */,
 				6DBBBAE629BA079B004C26CE /* ViewRouter.swift in Sources */,
 				6DBBBAEF29BA09D2004C26CE /* HomeViewModel.swift in Sources */,
+				3EA5E86B2AD92C7300CFEDAB /* D1PushViewController.swift in Sources */,
 				6DDDCE5C2A97753300B34B65 /* VirtualCardDetailView.swift in Sources */,
 				3EE80A6F2AB48B2900591BA7 /* D1Push.swift in Sources */,
+				3EA5E86F2AD94F4E00CFEDAB /* DigitalCardDetailView.swift in Sources */,
 				6DDDCE642A97753300B34B65 /* D1CoreLambdaHelper.swift in Sources */,
+				3EA5E86C2AD92C7300CFEDAB /* D1PushView.swift in Sources */,
 				6D09042C29C61CCF00C4A120 /* VirtualCardView.swift in Sources */,
 				6DDDCE5A2A97753300B34B65 /* VirtualCardDetailViewModel.swift in Sources */,
 				6DDDCE5B2A97753300B34B65 /* AddPassButton.swift in Sources */,
 				6D09042429C3302000C4A120 /* D1CoreEventHandler.swift in Sources */,
 				6DBBBAEC29BA0934004C26CE /* HomeView.swift in Sources */,
 				6D6698A229C21D2B00A9B197 /* ButtonOval.swift in Sources */,
+				3EADED9D2ADD2DD400F3CACB /* CardViewModel.swift in Sources */,
 				6DD6515B29B74749002F6F5B /* TemplatesApp.swift in Sources */,
 				6DDDCE5D2A97753300B34B65 /* D1VirtualCardsConstants.swift in Sources */,
 				6DDDCE572A97753300B34B65 /* D1VirtualCard.swift in Sources */,
 				6DDDCE582A97753300B34B65 /* D1VirtualCardsConfiguration.swift in Sources */,
 				6D09042629C618C200C4A120 /* ButtonOvalBlue.swift in Sources */,
+				3EADED9B2ADD2DB200F3CACB /* CardView.swift in Sources */,
 				6DDDCE592A97753300B34B65 /* D1VirtualCardApi.swift in Sources */,
+				3EA5E8722AD9638900CFEDAB /* DigitalCardView.swift in Sources */,
 				3E14007B2AB3096D00B4961E /* CoreUtils.swift in Sources */,
 				6D66989C29C211AE00A9B197 /* ProgressViewModifier.swift in Sources */,
 				6DDDCE632A97753300B34B65 /* D1InitState.swift in Sources */,
@@ -500,6 +551,7 @@
 				6D66989429C1D51900A9B197 /* NotificationViewModifier.swift in Sources */,
 				6DDDCE622A97753300B34B65 /* D1Core.swift in Sources */,
 				6DDDCE682A97753300B34B65 /* D1ModuleConnector.swift in Sources */,
+				3EA5E8742AD964C000CFEDAB /* DigitalCardDetailViewModel.swift in Sources */,
 				6D09042829C6199600C4A120 /* ButtonOvalRed.swift in Sources */,
 				6DBBBAE829BA08E5004C26CE /* RootView.swift in Sources */,
 				6DDDCE652A97753300B34B65 /* D1CoreEventListener.swift in Sources */,
@@ -630,7 +682,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Templates/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -646,7 +698,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.d1.Templates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -662,7 +714,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Templates/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -678,7 +730,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.d1.Templates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -9,6 +9,7 @@ enum Screen {
     case login
     case home
     case virtualCard
+    case digitalCard
 }
 
 /// Class to hold and notify the state about the current screen shown and to share data between screens.

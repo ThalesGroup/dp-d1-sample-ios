@@ -64,6 +64,29 @@ protocol D1PushApi {
     func deleteDigitalCard(cardId: String, digitalCard: DigitalCard, completion: @escaping (Bool?, D1Error?) -> Void)
     
     
+    /// Activates digital card.
+    /// - Parameters:
+    ///   - cardId: Card ID.
+    ///   - completion: Listener.
+    func activateDigitalCard(cardId: String, completion: @escaping (D1.D1Error?) -> Void);
+    
+    /// Retrieves the digital card.
+    /// - Parameters:
+    ///   - cardId: Card ID.
+    ///   - digitalCardId: Digital Card ID.
+    ///   - completion: Listener.
+    func getDigitalCard(cardId: String, digitaCardId: String, completion: @escaping (DigitalCard?, D1.D1Error?) -> Void);
+    
+    
+    /// Retrieves the DigitalCardDetailView.
+    /// - Parameters:
+    ///   - cardId: Card ID
+    ///   - digitalCardId: Digital card ID.
+    ///   - deleteCallback: Delete callback - triggered when card is deleted, used to reload the card list.
+    /// - Returns: DigitalCardDetailView
+    func getDigitalCardDetailView(_ cardId: String, _ digitalCardId: String, _ deleteCallback: @escaping () -> Void) -> DigitalCardDetailView;
+
+    
     /// Creates the D1Push related D1ModuleConnector.
     /// - Returns: D1Push related D1ModuleConnector.
     func createModuleConnector() -> D1ModuleConnector;

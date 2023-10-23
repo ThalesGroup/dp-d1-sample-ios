@@ -20,7 +20,7 @@ class D1Push {
     
     /// Retrieves the singleton instance of D1Push.
     /// - Returns: Singleton instance of D1Push.
-    public class func shared() -> D1Push {
+    public class func shared() -> D1PushApi {
         return sharedInstance
     }
     
@@ -35,14 +35,13 @@ class D1Push {
 // MARK: - D1VirtualCardApi
 
 extension D1Push: D1PushApi {
-
     func isDigitizedAsDigitalPayCard(_ cardId: String,
                                      completion: @escaping (D1.CardDigitizationResult?, D1.D1Error?) -> Void) {
-        // TODO
+        d1Task().cardDigitizationState(cardId, completion: lambda(VCEventCardDigitizationState, completion: completion))
     }
 
     func digitizeToDigitalPayCard(_ cardId: String, viewController: UIViewController, completion: @escaping (D1Error?) -> Void) {
-        // TODO
+        d1Task().addDigitalCardToOEM(cardId, viewController: viewController, completion: completion)
     }
     
     func createModuleConnector() -> D1ModuleConnector {
@@ -50,19 +49,57 @@ extension D1Push: D1PushApi {
     }
     
     func getDigitalCardList(cardId: String, completion: @escaping ([D1.DigitalCard]?, D1.D1Error?) -> Void) {
-        // TODO
+        d1Task().digitalCardList(cardId, completion: lambda(VCEventDigitalCardList, completion: completion))
     }
     
     func suspendDigitalCard(cardId: String, digitalCard: D1.DigitalCard, completion: @escaping (Bool?, D1.D1Error?) -> Void) {
-        // TODO
+        d1Task().updateDigitalCard(cardId,
+                                   digitalCard: digitalCard,
+                                   action: CardAction.suspend,
+                                   completion: lambda(VCEventCardDigitizationLifeCycle, completion: completion))
     }
     
     func resumedDigitalCard(cardId: String, digitalCard: D1.DigitalCard, completion: @escaping (Bool?, D1.D1Error?) -> Void) {
-        // TODO
+        d1Task().updateDigitalCard(cardId,
+                                   digitalCard: digitalCard,
+                                   action: CardAction.resume,
+                                   completion: lambda(VCEventCardDigitizationLifeCycle, completion: completion))
     }
     
     func deleteDigitalCard(cardId: String, digitalCard: D1.DigitalCard, completion: @escaping (Bool?, D1.D1Error?) -> Void) {
-        // TODO
+        d1Task().updateDigitalCard(cardId,
+                                   digitalCard: digitalCard,
+                                   action: CardAction.delete,
+                                   completion: lambda(VCEventCardDigitizationLifeCycle, completion: completion))
+    }
+    
+    func getDigitalCardDetailView(_ cardId: String, _ digitalCardId: String, _ deleteCallback: @escaping () -> Void) -> DigitalCardDetailView {
+        return DigitalCardDetailView(cardId, digitalCardId, deleteCallback)
+    }
+    
+    func activateDigitalCard(cardId: String, completion: @escaping (D1.D1Error?) -> Void) {
+        d1Task().activateDigitalCard(cardId, completion: lambda(VCEventCardActivation, completion: completion))
+    }
+    
+    func getDigitalCard(cardId: String, digitaCardId: String, completion: @escaping (D1.DigitalCard?, D1.D1Error?) -> Void) {
+        self.getDigitalCardList(cardId: cardId) { (cardList: [DigitalCard]?, error: D1Error?) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            if let cardList = cardList {
+                for digitalCard in cardList {
+                    if digitalCard.cardID == digitaCardId {
+                        completion(digitalCard, nil)
+                        
+                        return
+                    }
+                }
+            }
+            
+            completion(nil, nil)
+        }
     }
 }
 

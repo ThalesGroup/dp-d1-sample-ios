@@ -77,7 +77,7 @@ class LoginViewModel: BaseViewModel {
                         // This will enable the login button.
                         isInitializationSuccess = true
                     }
-                }, modules: D1Core.shared().createModuleConnector(D1Configuration.CONSUMER_ID), D1VirtualCard.shared().createModuleConnector())
+                }, modules: D1Core.shared().createModuleConnector(D1Configuration.CONSUMER_ID), D1VirtualCard.shared().createModuleConnector(), D1Push.shared().createModuleConnector())
             }
         }
     }

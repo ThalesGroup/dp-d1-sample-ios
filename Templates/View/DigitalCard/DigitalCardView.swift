@@ -6,10 +6,10 @@ import Foundation
 import SwiftUI
 
 
-/// Virtual card View.
-struct VirtualCardView: View {
+/// Digital card View.
+struct DigitalCardView: View {
     @EnvironmentObject var viewRouter: ViewRouter
-    @StateObject var viewModel = VirtualCardViewModel()
+    @StateObject var viewModel = DigitalCardViewModel()
     @State var isPresented = false
     @State private var selectedItem = 0
     
@@ -21,40 +21,29 @@ struct VirtualCardView: View {
                         .font(.system(size: 33))
                         .padding([.leading, .trailing], 30.0)
                     
-                    Text("Your virtual card")
-                        .font(.system(size: 17))
-                        .padding([.leading, .trailing], 30.0)
+                    if (viewModel.noDigitalCard) {
+                        Text("No digital card")
+                            .font(.system(size: 17))
+                            .padding([.leading, .trailing], 30.0)
+                    } else {
+                        Text("Your digital card")
+                            .font(.system(size: 17))
+                            .padding([.leading, .trailing], 30.0)
+                    }
                                         
                     TabView(selection: $selectedItem) {
-                        ForEach(viewModel.listOfCards) { loopCard in
+                        ForEach(viewModel.digitalCardList) { loopCard in
                             VStack{
-                                viewModel.getVirtualCardDetailView(loopCard.cardId)
-                                    .padding([.leading, .trailing], 15.0)
+                                viewModel.getDigitalCardDetailView(D1Configuration.CARD_ID, loopCard.cardId) {
+                                    // reload card list on card delted
+                                    viewModel.getDigitalCardList(D1Configuration.CARD_ID)
+                                }.padding([.leading, .trailing], 15.0)
                                 Spacer()
-                            }.tag(loopCard.tag).onAppear(){
-                                viewModel.cardDigitizationState(viewModel.listOfCards[loopCard.tag].cardId)
-                                print("onAppear: \(loopCard.tag)")
                             }
-                            
                         }
                     }
                     .tabViewStyle(.page)
                     .indexViewStyle(.page(backgroundDisplayMode: .always))
-                    
-                    
-                    if viewModel.pushAvailable {
-                        HStack {
-                            Spacer()
-
-                            PKAddPassButtonWrap() {
-                                self.isPresented = true
-                            }.frame(width: 194, height: 40).disabled(viewModel.disableDigitizationButton).opacity(viewModel.disableDigitizationButton ? 0.2 : 1.0).sheet(isPresented: self.$isPresented) {
-                                self.viewModel.digitizeCard(viewModel.listOfCards[self.selectedItem].cardId)
-                            }
-                                                        
-                            Spacer()
-                        }
-                    }
                     
                     Spacer()
                     
@@ -75,14 +64,16 @@ struct VirtualCardView: View {
                         viewRouter.currentPage = .home
                     }
                 }
+            }.onAppear() {
+                viewModel.getDigitalCardList(D1Configuration.CARD_ID)
             }
         }
     }
 }
 
-struct VirtualCardView_Previews: PreviewProvider {
-    static func testModel() -> VirtualCardViewModel {
-        let retValue = VirtualCardViewModel()
+struct DigitalCardView_Previews: PreviewProvider {
+    static func testModel() -> DigitalCardViewModel {
+        let retValue = DigitalCardViewModel()
         retValue.listOfCards = [TabItem(cardId: D1Configuration.CARD_ID, tag: 1),
                                 TabItem(cardId: D1Configuration.CARD_ID, tag: 2),
                                 TabItem(cardId: D1Configuration.CARD_ID, tag: 3)]
@@ -92,6 +83,6 @@ struct VirtualCardView_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        VirtualCardView(viewModel: testModel()).environmentObject(ViewRouter())
+        DigitalCardView(viewModel: testModel()).environmentObject(ViewRouter())
     }
 }

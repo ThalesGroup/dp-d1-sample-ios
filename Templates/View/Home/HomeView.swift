@@ -20,6 +20,9 @@ struct HomeView: View {
                 Button("Virtual Card") {
                     viewRouter.currentPage = .virtualCard
                 }.modifier(ButtonOvalBlue())
+                Button("Digital Card") {
+                    viewRouter.currentPage = .digitalCard
+                }.modifier(ButtonOvalBlue())
                 Spacer()
                 Button("Logout") {
                     viewModel.logout()

@@ -34,17 +34,13 @@ class D1VirtualCard {
 // MARK: - D1VirtualCardApi
 
 extension D1VirtualCard: D1VirtualCardApi {
-
-    func getCardMetadata(_ cardId: String, completion: @escaping (D1.CardMetadata?, D1.D1Error?) -> Void) {
-        d1Task().cardMetadata(cardId, completion: lambda(VCEventCardMetadata, completion: completion))
-    }
     
     func getCardDetails(_ cardId: String,
                         completion: @escaping (D1.CardDetails?, D1.D1Error?) -> Void) {
         d1Task().cardDetails(cardId, completion: lambda(VCEventCardDetails, completion: completion))
     }
 
-    func getVirtualCardDetailView(_ cardId: String?) -> VirtualCardDetailView {
+    func getVirtualCardDetailView(_ cardId: String) -> VirtualCardDetailView {
         return VirtualCardDetailView(cardId)
     }
     
