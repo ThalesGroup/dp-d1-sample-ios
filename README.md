@@ -57,7 +57,7 @@ For more details, please refer to the [D1 SDK Setup](https://thales-dis-dbp.stop
 
 ## D1 SDK Binaries
 
-This sample application was tested with **D1 SDK version 3.1.0**. D1 SDK binaries need to be placed in to the following location.
+This sample application was tested with **D1 SDK version 3.2.0**. D1 SDK binaries need to be placed in to the following location.
 
 ```bash
 Libs/
