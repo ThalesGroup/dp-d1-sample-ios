@@ -120,23 +120,25 @@ The sample application is divided in to multiple modules.
 ```bash
 .
 ├── Core
-│
 ├── Features
 │   ├── Push
 │   └── VirtualCard
-│
 ├── Libs
 │   ├── d1-libs-debug
 │   └── d1-libs-release
-│
-└── Templates.xcodeproj
+├── Templates.xcodeproj
+├── WalletExtension
+└── WalletExtensionUI
+
 ```
 
 * Core - Common classes and components for all modules.
 * Features/Push - [D1-Push](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/294f33eaf2378-introduction) use cases.
 * Features/VirtualCard - [Virtual Card](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/3c8a7e6f0a81a-card-display-introduction) use cases.
-* Libs - D1 SDK binaries.
+* Libs - [D1 SDK binaries](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/9d11ae3647d6b-integrate-sdk-binary-into-your-i-os-application).
 * Templates.xcodeproj - Main application project.
+* WalletExtension - Non-UI Extension for [Apple Wallet Extension](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/40b4ce42c7778-apple-wallet-extension).
+* WalletExtensionUI - UI Extension for [Apple Wallet Extension](https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/40b4ce42c7778-apple-wallet-extension).
 
 ## Documentation
 
