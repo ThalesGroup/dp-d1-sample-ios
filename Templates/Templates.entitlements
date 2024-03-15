@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--    See https://thales-dis-dbp.stoplight.io/docs/d1-developer-portal/tpa40s3iff528-d1-push-onboarding-for-wallets for Apple Pay Entitlement-->
+    <!--    <key>com.apple.developer.payment-pass-provisioning</key>-->
+    <!--    <true/>-->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.thalesgroup.d1.Templates</string>
+	</array>
+</dict>
+</plist>

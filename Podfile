@@ -12,6 +12,28 @@ target 'Templates' do
 
 end
 
+target 'WalletExtensionUI' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Templates
+
+  pod 'd1-libs-debug', :path => './Libs/d1-libs-debug', :configurations => ['Debug']
+  pod 'd1-libs-release', :path => './Libs/d1-libs-release', :configurations => ['Release']
+
+end
+
+target 'WalletExtension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Templates
+
+  pod 'd1-libs-debug', :path => './Libs/d1-libs-debug', :configurations => ['Debug']
+  pod 'd1-libs-release', :path => './Libs/d1-libs-release', :configurations => ['Release']
+
+end
+
 
 post_install do |installer|
   # Configure the Pods project

@@ -10,7 +10,7 @@ import D1
 protocol D1ModuleConnector {
     /// Returns the configuration for the Core module.
     /// - Returns: Configuration for the given module. It can be null.
-    func getConfiguration() -> D1.ConfigParams?
+    func getConfiguration() -> [D1.ConfigParams]
     
     /// Returns module identification.
     /// - Returns: Bitmask value of specific module.

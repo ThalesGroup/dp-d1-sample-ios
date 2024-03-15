@@ -67,11 +67,14 @@ extension D1Core: D1CoreApi {
         // configure core module.
         var moduleConfigurations: Set<ConfigParams> = []
         modules.forEach { loopConnector in
-            if let configToAdd = loopConnector.getConfiguration() {
-                moduleConfigurations.insert(configToAdd)
-            }
             enabledModules.append(loopConnector.getModuleId())
+            loopConnector.getConfiguration().forEach { config in
+                moduleConfigurations.insert(config)
+            }
         }
+        
+        // optionally, save any authentication related data, to be used in UI extension
+        saveToKeychain(key: "D1ConsumerID", value: D1Configuration.CONSUMER_ID)
         
         // Trigger the SDK configuration and wait for the result.
         d1Task!.configure(moduleConfigurations) { [self] errors in
@@ -134,6 +137,31 @@ extension D1Core: D1CoreApi {
     func createModuleConnector(_ consumerID: String) -> D1ModuleConnector {
         return D1CoreModuleConnector(consumerID)
     }
+    
+    // MARK: - private
+    
+    
+    /// Saves the value to keychain.
+    /// - Parameters:
+    ///   - key: Key.
+    ///   - value: Value.
+    func saveToKeychain(key: String, value: String) {
+        guard let valueData = value.data(using: .utf8) else {
+            return
+        }
+        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: "IssuerAppService",
+            kSecAttrAccessGroup as String: "group.com.thalesgroup.d1.Templates",
+            kSecAttrAccount as String: key]
+        var addQuery = query
+        addQuery[kSecValueData as String] = valueData
+        let status = SecItemAdd(addQuery as CFDictionary, nil)
+
+        if status == errSecDuplicateItem  {
+            let updatedData: [String: Any] = [kSecValueData as String: valueData]
+            SecItemUpdate(query as CFDictionary, updatedData as CFDictionary)
+        }
+    }
 
     
     // MARK: - D1ModuleConnector
@@ -146,9 +174,9 @@ extension D1Core: D1CoreApi {
             self.consumerID = consumerID
         }
         
-        func getConfiguration() -> D1.ConfigParams? {
+        func getConfiguration() -> [D1.ConfigParams] {
             // There is no extra configuration needed for this module.
-            return ConfigParams.coreConfig(consumerID: self.consumerID)
+            return [ConfigParams.coreConfig(consumerID: self.consumerID)]
         }
         
         func getModuleId() -> Module {

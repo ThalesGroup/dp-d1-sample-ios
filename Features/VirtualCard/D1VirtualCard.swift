@@ -54,9 +54,9 @@ extension D1VirtualCard: D1VirtualCardApi {
 
 /// D1VirtualCard related D1ModuleConnector.
 private class D1VirtualCardModuleConnector: D1ModuleConnector {
-    func getConfiguration() -> D1.ConfigParams? {
+    func getConfiguration() -> [D1.ConfigParams] {
         // There is no extra configuration needed for this module.
-        return nil
+        return []
     }
     
     func getModuleId() -> Module {
