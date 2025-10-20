@@ -1,6 +1,6 @@
 PODS:
-  - d1-libs-debug (3.3.0)
-  - d1-libs-release (3.3.0)
+  - d1-libs-debug (4.1.1)
+  - d1-libs-release (4.1.1)
 
 DEPENDENCIES:
   - d1-libs-debug (from `./Libs/d1-libs-debug`)
@@ -13,9 +13,9 @@ EXTERNAL SOURCES:
     :path: "./Libs/d1-libs-release"
 
 SPEC CHECKSUMS:
-  d1-libs-debug: d3903e89f9149e9cf5b32e0bdcaccdb34ed4cd39
-  d1-libs-release: c325ed099675f169bb6c380069a3493bd4511c45
+  d1-libs-debug: bef68bbf1868d0e8398f2c820c5682282a4dae42
+  d1-libs-release: 0388ff71e3178b18c682b4c375fdc94acca3a14d
 
 PODFILE CHECKSUM: b1a1e45c7c5d2e4384c6d9b608a8d96332735444
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.16.2

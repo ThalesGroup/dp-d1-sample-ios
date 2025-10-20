@@ -79,7 +79,7 @@ class VirtualCardDetailViewModel: CardViewModel {
                     cardHolderName = String(data: data, encoding: .utf8)
                 }
             } else if let unHandled = handleError(error) {
-                bannerShow(caption: "Load Card Metadada failed.", description: unHandled.localizedDescription, type: .error)
+                bannerShow(caption: "Load Card Details failed.", description: unHandled.localizedDescription, type: .error)
                 showFullPan = false
             }
         }
