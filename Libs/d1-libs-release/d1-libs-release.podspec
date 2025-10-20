@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "15.0" }
+  s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://www.thalesgroup.com.git", :tag => "#{s.version}" }
 
   s.ios.vendored_framework = 'D1Core.xcframework', 'D1.xcframework', 'TPCSDKSwift.xcframework', 'SecureLogAPI.xcframework'
