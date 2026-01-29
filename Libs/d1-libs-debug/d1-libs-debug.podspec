@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://www.thalesgroup.com.git", :tag => "#{s.version}" }
 
-  s.ios.vendored_framework = 'D1Core.xcframework', 'D1.xcframework', 'TPCSDKSwift.xcframework', 'SecureLogAPI.xcframework'
+  s.ios.vendored_framework = 'D1.xcframework', 'SecureLogAPI.xcframework'
 end

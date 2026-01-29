@@ -15,6 +15,10 @@ public struct D1Configuration {
     static var SANDBOX_JWT_URL: String!
     static var SANDBOX_JWT_USER: String!
     static var SANDBOX_JWT_PASSWORD: String!
+    static var KID: String!
+    static var ISS: String!
+    static var AUD: String!
+    static var SCOPE: String!
     
     // TODO: Used for testing.
     static var CONSUMER_ID: String!
@@ -39,6 +43,10 @@ public struct D1Configuration {
                 SANDBOX_JWT_URL = readProperty(dictionary: dictionary, key: "SANDBOX_JWT_URL")
                 SANDBOX_JWT_USER = readProperty(dictionary: dictionary, key: "SANDBOX_JWT_USER")
                 SANDBOX_JWT_PASSWORD = readProperty(dictionary: dictionary, key: "SANDBOX_JWT_PASSWORD")
+                KID = readProperty(dictionary: dictionary, key: "KID")
+                ISS = readProperty(dictionary: dictionary, key: "ISS")
+                AUD = readProperty(dictionary: dictionary, key: "AUD")
+                SCOPE = readProperty(dictionary: dictionary, key: "SCOPE")
             } else {
                 fatalError("Cannot read D1Configuration.plist file.")
             }

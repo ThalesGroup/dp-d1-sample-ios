@@ -47,6 +47,14 @@ The `D1Configuration.plist` file which holds the D1 backend configuration needs 
 	<string></string>
 	<key>SANDBOX_JWT_PASSWORD</key>
 	<string></string>
+	<key>KID</key>
+	<string></string>
+	<key>ISS</key>
+	<string></string>
+	<key>AUD</key>
+	<string></string>
+	<key>SCOPE</key>
+	<string></string>
 </dict>
 </plist>
 ```
@@ -57,23 +65,19 @@ For more details, please refer to the [D1 SDK Setup](https://thales-dis-dbp.stop
 
 ## D1 SDK Binaries
 
-This sample application was tested with **D1 SDK version 4.1.1**. D1 SDK binaries need to be placed in to the following location.
+This sample application was tested with **D1 SDK version 4.2.0**. D1 SDK binaries need to be placed in to the following location.
 
 ```bash
 Libs/
 ├── d1-libs-debug
 │   ├── D1.xcframework
-│   ├── D1Core.xcframework
 │   ├── SecureLogAPI.xcframework
-│   ├── TPCSDKSwift.xcframework
 │   ├── d1-libs-debug.podspec
 │   └── package.json
 │
 └── d1-libs-release
     ├── D1.xcframework
-    ├── D1Core.xcframework
     ├── SecureLogAPI.xcframework
-    ├── TPCSDKSwift.xcframework
     ├── d1-libs-release.podspec
     └── package.json
 ```

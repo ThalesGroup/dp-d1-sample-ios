@@ -29,13 +29,20 @@ class LoginViewModel: BaseViewModel {
     func login() {
         progressShow(caption: "Login in progress")
         
-        var request = URLRequest(url: URL(string: D1Configuration.SANDBOX_JWT_URL + D1Configuration.CONSUMER_ID)!)
-        request.setBasicAuth(username: D1Configuration.SANDBOX_JWT_USER,
-                             password: D1Configuration.SANDBOX_JWT_PASSWORD)
-        
-        URLSession.shared.dataTask(with: request) { [self] data, response, error in
-            if var token = data {
-                D1Core.shared().login(issuerToken: &token) { [self] error in
+        fetchSandboxJWT { result in
+            switch result {
+            case .success(let jwt):
+                guard var jwtData = jwt.data(using: .utf8) else {
+                    self.progressHide()
+                    
+                    self.bannerShow(caption: "Failed to get token from the backend.",
+                               description: "Unknown error",
+                               type: .error)
+                    
+                    return
+                }
+                
+                D1Core.shared().login(issuerToken: &jwtData) { [self] error in
                     progressHide()
                     
                     if let error = error {
@@ -45,15 +52,14 @@ class LoginViewModel: BaseViewModel {
                         isLoginSucces = true
                     }
                 }
-            } else {
-                progressHide()
+            case .failure(let error):
+                self.progressHide()
 
-                bannerShow(caption: "Failed to get token from the backend.",
-                           description: error?.localizedDescription ?? "Unknown error",
+                self.bannerShow(caption: "Failed to get token from the backend.",
+                           description: error.localizedDescription,
                            type: .error)
             }
-            
-        }.resume()
+        }
     }
     
     // MARK: - Private Helpers

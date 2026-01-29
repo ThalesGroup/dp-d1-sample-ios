@@ -33,6 +33,7 @@ struct VirtualCardView: View {
                                 Spacer()
                             }.tag(loopCard.tag).onAppear(){
                                 viewModel.cardDigitizationState(viewModel.listOfCards[loopCard.tag].cardId)
+                                viewModel.isClickToPayEnrolled(viewModel.listOfCards[loopCard.tag].cardId)
                                 print("onAppear: \(loopCard.tag)")
                             }
                             
@@ -40,6 +41,27 @@ struct VirtualCardView: View {
                     }
                     .tabViewStyle(.page)
                     .indexViewStyle(.page(backgroundDisplayMode: .always))
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            viewModel.enrollClickToPay(viewModel.listOfCards[self.selectedItem].cardId)
+                        } label: {
+                            HStack(spacing: 8) {
+                                Text("Click To Pay")
+                                Image("click_to_pay")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                                    .scaleEffect(2.0)
+                            }
+                        }.modifier(ButtonOval())
+                            .disabled(viewModel.isClickToPayEnrolled)
+                        .padding(.vertical, 6)
+                        
+                        Spacer()
+                    }
                     
                     
                     if viewModel.pushAvailable {

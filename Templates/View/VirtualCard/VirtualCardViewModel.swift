@@ -17,6 +17,7 @@ class VirtualCardViewModel: BaseViewModel {
     var listOfCards: [TabItem] = [TabItem(cardId: D1Configuration.CARD_ID, tag: 0),
                                   TabItem(cardId: D1Configuration.CARD_ID, tag: 1)]
     @Published var disableDigitizationButton: Bool = true;
+    @Published var isClickToPayEnrolled: Bool = true;
     @Published var pushAvailable: Bool = D1Core.shared().isModuleEnabled(.d1Push)
     
     
@@ -50,5 +51,41 @@ class VirtualCardViewModel: BaseViewModel {
     /// - Returns: D1PushView.
     func digitizeCard(_ cardId: String) -> D1PushView {
         return D1PushView(viewModel: self, cardId: cardId)
+    }
+    
+    
+    /// Enrolls Click To Pay.
+    /// - Parameter cardId: Card ID.
+    func enrollClickToPay(_ cardId: String) {
+        progressShow(caption: "Click To Pay enrollment in progress")
+        
+        // TODO: use dummy data for now
+        let consumerInfo = ConsumerInfo(firstName: "Bella", middleName: nil, lastName: "Lin", language: "en-US", phoneNumberCountryCode: "+65", phoneNumber: "99998888", email: "email@thalesgroup.com")
+        let billingAddress = BillingAddress(line1: "1230 Rue de Rivoli", line2: nil, line3: nil, city: "Paris", state: "75", zipCode: "75000", countryCode: "FR")
+        let name = "Bella Lin"
+        
+        ClickToPay.shared().enrolClickToPay(cardId, consumerInfo, billingAddress, name) { status, error in
+            self.progressHide()
+            
+            if let error = error {
+                self.bannerShow(caption: "Enroll Click To Pay failed.", description: error.localizedDescription, type: .error)
+            } else {
+                self.bannerShow(caption: "Click To Pay status: \(String(describing: status?.stringValue))", description: "", type: .info)
+                self.isClickToPayEnrolled = true
+            }
+        }
+    }
+    
+    
+    /// Checks if Click To Pay is enrolled.
+    /// - Parameter cardId: Card ID.
+    func isClickToPayEnrolled(_ cardId: String) {
+        ClickToPay.shared().isClickToPayEnrolled(cardId) { isClickToPayEnrolled, error in
+            if let error = error {
+                self.bannerShow(caption: "Error checking Click To Pay enrollment.", description: error.localizedDescription, type: .error)
+            } else {
+                self.isClickToPayEnrolled = isClickToPayEnrolled
+            }
+        }
     }
 }
